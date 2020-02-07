@@ -1,0 +1,174 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+/* Header */
+.header {
+    grid-area: header;
+    background: rgb(8, 167, 175);
+    text-align: center;
+    line-height: 50px;
+    color: whitesmoke;
+    font-size: 24px;
+    font-style: italic;
+}
+/* Sidebar & Profile Menu */
+.sidebar {
+    grid-area: sidebar;
+    /* border: 1px solid black; */
+}
+.sidebar-panel {
+    width: 250px;
+    height: 100%;
+    position: absolute;
+    text-align: center;
+}
+.profile-menu {
+    width: 225px;
+    float: left;
+    background: rgb(0, 0, 0);
+    opacity: 0.9;
+    height: inherit;
+}
+.profile-menu-button {
+    width: 25px;
+    height: 25px;
+    background-size: 25px 25px;
+    margin-top: 25px;
+}
+.profile-photo {
+    /* background-size: 25px 25px; */
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 5px solid whitesmoke;
+    margin-top: 25px;
+}
+.add-task {
+    width: 150px;
+    height: 40px;
+    border: 0;
+    background: rgb(8, 167, 175);
+    margin-top: 25px;
+    color: whitesmoke;
+    font-size: 16px;
+}
+.add-task:active {
+    /* border: 2px solid rgb(0, 195, 202); */
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+    color: blue;
+}
+.logout {
+    margin-top: 25px;
+    font-size: 16px;
+    width: 150px;
+    height: 40px;
+    border: 0;
+    background: rgb(8, 167, 175);
+    color: whitesmoke;
+}
+.logout:active {
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+    color: blue;
+}
+/* Основной контент */
+.content {
+    grid-area: content;
+    /* border: 1px solid red; */
+}
+.new-task-form {
+    margin: 25px auto 0 150px;
+    width: 600px;
+    height: 180px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    /* border: 1px solid black; */
+    z-index: 1;
+}
+.task-name {
+    width: 570px;
+    height: 25px;
+    margin: 15px 15px 0px 15px;
+    font: 14px Arial;
+}
+.task-description {
+    width: 570px;
+    margin: 15px 15px 0px 15px;
+    font: 14px Arial;
+    resize: none;
+}
+/* .control-buttons {   
+    width: 25px;
+    height: 25px;
+    border: 0px;
+    float: right;
+    margin: 15px 15px 15px 0; 
+} */
+.save {
+    background: url('../images/save-button.png');
+    background-size: 25px 25px;
+    width: 25px;
+    height: 25px;
+    border: 0px;
+    float: right;
+    margin: 15px 15px 15px 0;  
+}
+.save:hover {
+    background: url('../images/save-button-active.png');
+    background-size: 25px 25px;
+    width: 25px;
+    height: 25px;
+    border: 0px;
+    float: right;
+    margin: 15px 15px 15px 0; 
+}
+.edit {
+    background: url('../images/edit-button.png');
+    background-size: 25px 25px;
+    width: 25px;
+    height: 25px;
+    border: 0px;
+    float: right;
+    margin: 15px 15px 15px 0; 
+}
+.edit:hover {
+    background: url('../images/edit-button-active.png');
+    background-size: 25px 25px;
+    width: 25px;
+    height: 25px;
+    border: 0px;
+    float: right;
+    margin: 15px 15px 15px 0; 
+}
+.delete {
+    background: url('../images/delete-button.png');
+    background-size: 25px 25px; 
+    width: 25px;
+    height: 25px;
+    border: 0px;
+    float: right;
+    margin: 15px 15px 15px 0; 
+}
+.delete:hover {
+    background: url('../images/delete-button-active.png');
+    background-size: 25px 25px;
+    width: 25px;
+    height: 25px;
+    border: 0px;
+    float: right;
+    margin: 15px 15px 15px 0; 
+}
+
+.wrapper {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    grid-template-rows: 50px auto;
+    grid-template-areas: 
+        "header header"
+        "sidebar content";
+    /* align-items: center; */
+    
+}
+
+/* Модальное окно */
