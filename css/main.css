@@ -7,42 +7,48 @@
 .header {
     grid-area: header;
     background: rgb(8, 167, 175);
-    text-align: center;
     line-height: 50px;
+    width: 100%;
+}
+.app-name {
     color: whitesmoke;
+    margin: 0 0 0 15px;
     font-size: 24px;
-    font-style: italic;
+    float: left;
+}
+.login-button {
+    height: 45px;
+    background: rgb(8, 167, 175);
+    border: 0px;
+    color: whitesmoke;
+    font-size: 16px;
+    float: right;
+}
+.reg-button {
+    height: 45px;
+    background: rgb(8, 167, 175);
+    border: 0px;
+    color: whitesmoke;
+    font-size: 16px;
+    float: right;
+    margin: 0 15px 0 15px;
 }
 /* Sidebar & Profile Menu */
 .sidebar {
     grid-area: sidebar;
-    /* border: 1px solid black; */
 }
 .sidebar-panel {
-    width: 250px;
-    height: 100%;
-    position: absolute;
+    margin: 15px;
+    width: 220px;
+    height: auto;
     text-align: center;
-}
-.profile-menu {
-    width: 225px;
-    float: left;
-    background: rgb(0, 0, 0);
-    opacity: 0.9;
-    height: inherit;
-}
-.profile-menu-button {
-    width: 25px;
-    height: 25px;
-    background-size: 25px 25px;
-    margin-top: 25px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 .profile-photo {
-    /* background-size: 25px 25px; */
     width: 150px;
     height: 150px;
     border-radius: 50%;
-    border: 5px solid whitesmoke;
+    border: 5px solid rgb(8, 167, 175);
     margin-top: 25px;
 }
 .add-task {
@@ -50,17 +56,15 @@
     height: 40px;
     border: 0;
     background: rgb(8, 167, 175);
-    margin-top: 25px;
+    margin-top: 15px;
     color: whitesmoke;
     font-size: 16px;
 }
 .add-task:active {
-    /* border: 2px solid rgb(0, 195, 202); */
-    box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
     color: blue;
 }
 .logout {
-    margin-top: 25px;
+    margin: 15px 0 15px 0;
     font-size: 16px;
     width: 150px;
     height: 40px;
@@ -69,41 +73,27 @@
     color: whitesmoke;
 }
 .logout:active {
-    box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
     color: blue;
 }
 /* Основной контент */
 .content {
     grid-area: content;
-    /* border: 1px solid red; */
 }
 .new-task-form {
-    margin: 25px auto 0 150px;
-    width: 600px;
-    height: 180px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
-    /* border: 1px solid black; */
-    z-index: 1;
+    margin: 15px 15px 0 30px;
+    height: 55px;
+    width: auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    background: rgb(8, 167, 175);
 }
 .task-name {
-    width: 570px;
+    width: 20em;
     height: 25px;
-    margin: 15px 15px 0px 15px;
+    margin: 15px 15px 15px 15px;
     font: 14px Arial;
+    float: left;
+    border: 0;
 }
-.task-description {
-    width: 570px;
-    margin: 15px 15px 0px 15px;
-    font: 14px Arial;
-    resize: none;
-}
-/* .control-buttons {   
-    width: 25px;
-    height: 25px;
-    border: 0px;
-    float: right;
-    margin: 15px 15px 15px 0; 
-} */
 .save {
     background: url('../images/save-button.png');
     background-size: 25px 25px;

@@ -7,19 +7,25 @@
     </head>
     <body>
         <div class="wrapper">
-            <div class="header">ToDo List</div>
+            <div class="header">
+                <i class="app-name">ToDo List</i>
+                <button class="reg-button">Зарегистрироваться</button>
+                <button class="login-button">Войти</button>
+            </div>
             <div class="sidebar">
-                <div class='sidebar-panel' style="left: -225px;">
-                    <div class="profile-menu">
-                        <img src='images/default-profile-photo.png' class='profile-photo'>
-                        <button class='add-task'>Новая задача</button>
-                        <button class='logout'>Выйти</button>
-                    </div>
-                    <img src="images/arrow.png" class='profile-menu-button'>
-                    <!-- <button class='profile-menu-button'>-></button> -->
+                <div class="sidebar-panel">
+                    <img src='images/default-profile-photo.png' class='profile-photo'>
+                    <button class='add-task'>Новая задача</button>
+                    <button class='logout'>Выйти</button>
                 </div>
             </div>
             <div class="content">
+                <!-- <div class="new-task-form">
+                    <input type="text" class="task-name" placeholder="Введите название задачи...">
+                    <button class="save-button"></button>
+                    <button class="edit-button"></button>
+                    <button class="delete-button"></button>
+                </div> -->
             </div>
         </div>
         <script src="js/newTask.js"></script>

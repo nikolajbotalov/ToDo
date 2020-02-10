@@ -1,31 +1,17 @@
 let content = document.querySelector('.content')
 
-let p_menuButton = document.querySelector('.profile-menu-button')
-p_menuButton.addEventListener('click', showProfilePanel)
-
-function showProfilePanel() {
-  let sidebarPanel = document.querySelector('.sidebar-panel')
-  if (sidebarPanel.style.left == '-225px') {
-    sidebarPanel.style.left = '0px'
-    let newTask = document.querySelector('.add-task')
-    newTask.addEventListener('click', addTask)
-    this.style.transform = 'scale(-1, 1)';
-  } else {
-    sidebarPanel.style.left = '-225px'
-    this.style.transform = 'scale(1, 1)';
-  }
-}
+let newTask = document.querySelector('.add-task')
+newTask.addEventListener('click', addTask)
 
 // Добавление новой задачи 
 function addTask() {
 
   let createTaskForm = '<div class="new-task-form">'
-  createTaskForm += '<input type="text" class="task-name" placeholder="Введите имя задачи" maxlength="64">'
-  createTaskForm += '<textarea rows="3" class="task-description" placeholder="Введите описание задачи..."></textarea>'
+  createTaskForm += '<input type="text" class="task-name" placeholder="Введите название задачи">'
   createTaskForm += '<button class="delete"></button>'
   createTaskForm += '<button class="edit"></button>'
   createTaskForm += '<button class="save"></button>'
-  createTaskForm += '</div>'
+  createTaskForm += '</div>'  
 
   content.insertAdjacentHTML('beforeend', createTaskForm)
 
