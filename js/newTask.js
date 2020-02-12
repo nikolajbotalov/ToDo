@@ -1,3 +1,4 @@
+// Объявляем переменную для хранения основной элемента страницы
 let content = document.querySelector('.content')
 
 let newTask = document.querySelector('.add-task')
@@ -6,6 +7,8 @@ newTask.addEventListener('click', addTask)
 // Добавление новой задачи 
 function addTask() {
 
+  // Объявляем переменную для хранения блока
+  // с элементами новой задачи
   let createTaskForm = '<div class="new-task-form">'
   createTaskForm += '<input type="text" class="task-name" placeholder="Введите название задачи">'
   createTaskForm += '<button class="delete"></button>'
@@ -13,55 +16,55 @@ function addTask() {
   createTaskForm += '<button class="save"></button>'
   createTaskForm += '</div>'  
 
+  // Добавляем на страницу
   content.insertAdjacentHTML('beforeend', createTaskForm)
 
   // Событие для сохранение задачи
   let saveButton = document.getElementsByClassName('save')
   for (let i = 0; i < saveButton.length; i++) {
-    console.log('click')
     saveButton[i].addEventListener('click', saveTask)
   }
 
+  // Событие для редактирования задачи
+  let editButton = document.getElementsByClassName('edit')
+  for (let i = 0; i < editButton.length; i++) {
+    editButton[i].addEventListener('click', editTask)
+  }
+
   // Событие для удаления задачи
-  let deleteButton = document.querySelector('.delete')
-  deleteButton.addEventListener('click', removeTask)
+  let deleteButton = document.getElementsByClassName('delete') 
+  for (let i = 0; i < deleteButton.length; i++) {
+    deleteButton[i].addEventListener('click', removeTask)
+  }
 }
 
 // Сохранение задачи  
 function saveTask() {
-  let taskName = document.querySelector('.task-name') 
-  taskName.disabled = true
-  taskName.style.fontWeight = 'bold'
 
-  let descriptionTask = document.querySelector('.task-description')
-  descriptionTask.disabled = true 
-  descriptionTask.style.fontWeight = 'bold';
-
-  // Событие для редактирование задачи 
-  if (taskName.disabled) {
-    let editButton = document.querySelector('.edit')
-    editButton.addEventListener('click', editTask)
-  }
+  // Находим родительский элемент, затем его дочерний и дизаблим
+  let taskDiv = this.parentNode
+  let taskName = taskDiv.firstChild 
+  taskName.disabled = 'false'
 }
+
 // Редактирование задачи
 function editTask() {
-  let nameTask = document.querySelector('.task-name')
-  nameTask.disabled = false
-  nameTask.style.fontWeight = 'normal'
-
-  let descriptionTask = document.querySelector('.task-description')
-  descriptionTask.disabled = false
-  descriptionTask.style.fontWeight = 'normal'
+  
+  // Находим родительский элемент, затем его дочерний, 
+  // если задизаблен, то даем возможность редактировать
+  let taskDiv = this.parentNode;
+  let taskName = taskDiv.firstChild
+  if (taskName.disabled) {
+    taskName.disabled = false
+  }
 }
 
-// Удаление задачи
+// // Удаление задачи
 function removeTask() {
-  let taskForm = document.getElementsByClassName('new-task-form')
-  for (let i = 0; i < taskForm.length; i++) {
-    taskForm[i].addEventListener('click', function(e) {
-      e.target = this.remove()
-    })
-  }
+
+  // Находим родительский элемент, затем его удаляем
+  let taskDiv = this.parentNode;
+  taskDiv.remove()
 }
 
 

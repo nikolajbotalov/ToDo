@@ -82,14 +82,14 @@
 .new-task-form {
     margin: 15px 15px 0 30px;
     height: 55px;
-    width: auto;
+    padding: 15px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     background: rgb(8, 167, 175);
 }
 .task-name {
-    width: 20em;
+    width: 50%;
     height: 25px;
-    margin: 15px 15px 15px 15px;
+    box-sizing: border-box;
     font: 14px Arial;
     float: left;
     border: 0;
@@ -101,7 +101,6 @@
     height: 25px;
     border: 0px;
     float: right;
-    margin: 15px 15px 15px 0;  
 }
 .save:hover {
     background: url('../images/save-button-active.png');
@@ -110,7 +109,6 @@
     height: 25px;
     border: 0px;
     float: right;
-    margin: 15px 15px 15px 0; 
 }
 .edit {
     background: url('../images/edit-button.png');
@@ -119,7 +117,7 @@
     height: 25px;
     border: 0px;
     float: right;
-    margin: 15px 15px 15px 0; 
+    margin-left: 15px;
 }
 .edit:hover {
     background: url('../images/edit-button-active.png');
@@ -128,7 +126,6 @@
     height: 25px;
     border: 0px;
     float: right;
-    margin: 15px 15px 15px 0; 
 }
 .delete {
     background: url('../images/delete-button.png');
@@ -137,7 +134,7 @@
     height: 25px;
     border: 0px;
     float: right;
-    margin: 15px 15px 15px 0; 
+    margin-left: 15px;
 }
 .delete:hover {
     background: url('../images/delete-button-active.png');
@@ -146,7 +143,6 @@
     height: 25px;
     border: 0px;
     float: right;
-    margin: 15px 15px 15px 0; 
 }
 
 .wrapper {
@@ -160,5 +156,3 @@
     /* align-items: center; */
     
 }
-
-/* Модальное окно */
