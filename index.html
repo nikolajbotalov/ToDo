@@ -1,33 +1,45 @@
 <!DOCTYPE html>
 <html lang="ru">
-    <head>
-        <meta charset="utf-8">
-        <title>ToDO List</title>
-        <link href='css/main.css' rel='stylesheet'>
-    </head>
-    <body>
-        <div class="wrapper">
-            <div class="header">
-                <i class="app-name">ToDo List</i>
-                <button class="reg-button">Зарегистрироваться</button>
-                <button class="login-button">Войти</button>
-            </div>
-            <div class="sidebar">
-                <div class="sidebar-panel">
-                    <img src='images/default-profile-photo.png' class='profile-photo'>
-                    <button class='add-task'>Новая задача</button>
-                    <button class='logout'>Выйти</button>
-                </div>
-            </div>
-            <div class="content">
-                <!-- <div class="new-task-form">
-                    <input type="text" class="task-name" placeholder="Введите название задачи...">
-                    <button class="save-button"></button>
-                    <button class="edit-button"></button>
-                    <button class="delete-button"></button>
-                </div> -->
+
+<head>
+    <meta charset="utf-8">
+    <title>ToDO List</title>
+    <link href='css/main.css' rel='stylesheet'>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="header">
+            <i class="app-name">ToDo List</i>
+            <button class="reg-button">Зарегистрироваться</button>
+            <button class="login-button">Войти</button>
+        </div>
+        <div class="sidebar" style="visibility: hidden">
+            <div class="sidebar-panel">
+                <img src='images/default-profile-photo.png' class='profile-photo'>
+                <button class='add-task'>Новая задача</button>
+                <button class='logout'>Выйти</button>
             </div>
         </div>
-        <script src="js/newTask.js"></script>
-    </body>
+        <div class="content">
+            <div class="answer-panel" style="display: none">
+                <p id="answer"></p>
+            </div>
+            <div class='auth-panel' style='display: none'>
+                <span>Добро пожаловать!</span>
+                <input id='user-input' class='auth-inputs' type='text' placeholder='login'>
+                <input id='pass-input' class='auth-inputs' type='password' placeholder='password'>
+                <input type='submit' class='auth-submit' value='Войти'>
+            </div>
+            <div class='reg-panel' style='display: none'>
+                <span>Придумайте логин и пароль!</span>
+                <input id='reg-user-input' class='auth-inputs' type='text' placeholder='login'>
+                <input id='reg-pass-input' class='auth-inputs' type='password' placeholder='password'>
+                <input type='submit' class='reg-submit' value='Зарегистрироваться'>
+            </div>
+        </div>
+    </div>
+    <script src="js/newTask.js"></script>
+</body>
+
 </html>

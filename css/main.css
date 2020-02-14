@@ -78,18 +78,19 @@
 /* Основной контент */
 .content {
     grid-area: content;
+    /* border: 1px solid red; */
 }
 .new-task-form {
     margin: 15px 15px 0 30px;
     height: 55px;
-    width: auto;
+    padding: 15px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     background: rgb(8, 167, 175);
 }
 .task-name {
-    width: 20em;
+    width: 50%;
     height: 25px;
-    margin: 15px 15px 15px 15px;
+    box-sizing: border-box;
     font: 14px Arial;
     float: left;
     border: 0;
@@ -101,7 +102,6 @@
     height: 25px;
     border: 0px;
     float: right;
-    margin: 15px 15px 15px 0;  
 }
 .save:hover {
     background: url('../images/save-button-active.png');
@@ -110,7 +110,6 @@
     height: 25px;
     border: 0px;
     float: right;
-    margin: 15px 15px 15px 0; 
 }
 .edit {
     background: url('../images/edit-button.png');
@@ -119,7 +118,7 @@
     height: 25px;
     border: 0px;
     float: right;
-    margin: 15px 15px 15px 0; 
+    margin-left: 15px;
 }
 .edit:hover {
     background: url('../images/edit-button-active.png');
@@ -128,7 +127,6 @@
     height: 25px;
     border: 0px;
     float: right;
-    margin: 15px 15px 15px 0; 
 }
 .delete {
     background: url('../images/delete-button.png');
@@ -137,7 +135,7 @@
     height: 25px;
     border: 0px;
     float: right;
-    margin: 15px 15px 15px 0; 
+    margin-left: 15px;
 }
 .delete:hover {
     background: url('../images/delete-button-active.png');
@@ -146,7 +144,62 @@
     height: 25px;
     border: 0px;
     float: right;
-    margin: 15px 15px 15px 0; 
+}
+
+.auth-panel {
+    width: 300px;
+    height: 350px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    margin: 75px 0 0 275px;
+    text-align: center;
+}
+.reg-panel {
+    width: 300px;
+    height: 350px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    margin: 75px 0 0 275px;
+    text-align: center;
+}
+span {
+    line-height: 175px;
+    font-size: 22px;
+}
+.auth-inputs {
+    width: 200px;
+    height: 35px;
+    margin-top: 15px;
+    text-align: center;
+    font-size: 18px;
+}
+.auth-submit {
+    width: 150px;
+    height: 35px;
+    margin: 15px;
+    border: 0;
+    background: rgb(8, 167, 175);
+    color: whitesmoke;
+    font-size: 18px;
+}
+.reg-submit {
+    width: 175px;
+    height: 35px;
+    margin: 15px;
+    border: 0;
+    background: rgb(8, 167, 175);
+    color: whitesmoke;
+    font-size: 16px;
+}
+
+.answer-panel {
+    width: 300px;
+    height: 75px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    margin: 200px 0 0 275px;
+}
+#answer {
+    text-align: center;
+    line-height: 75px;
+    word-wrap: break-word;
 }
 
 .wrapper {
@@ -160,5 +213,3 @@
     /* align-items: center; */
     
 }
-
-/* Модальное окно */
