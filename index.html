@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <title>ToDO List</title>
-    <link href='css/main.css' rel='stylesheet'>
+    <link href='css/style.css' rel='stylesheet'>
 </head>
 
 <body>
@@ -22,17 +22,16 @@
             </div>
         </div>
         <div class="content">
-            <div class="answer-panel" style="display: none">
-                <p id="answer"></p>
-            </div>
             <div class='auth-panel' style='display: none'>
                 <span>Добро пожаловать!</span>
+                <p class='auth-answer'></p>
                 <input id='user-input' class='auth-inputs' type='text' placeholder='login'>
                 <input id='pass-input' class='auth-inputs' type='password' placeholder='password'>
                 <input type='submit' class='auth-submit' value='Войти'>
             </div>
             <div class='reg-panel' style='display: none'>
                 <span>Придумайте логин и пароль!</span>
+                <p class='reg-answer'></p>
                 <input id='reg-user-input' class='auth-inputs' type='text' placeholder='login'>
                 <input id='reg-pass-input' class='auth-inputs' type='password' placeholder='password'>
                 <input type='submit' class='reg-submit' value='Зарегистрироваться'>

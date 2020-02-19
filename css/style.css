@@ -3,6 +3,7 @@
     padding: 0px;
     box-sizing: border-box;
 }
+
 /* Header */
 .header {
     grid-area: header;
@@ -10,12 +11,14 @@
     line-height: 50px;
     width: 100%;
 }
+
 .app-name {
     color: whitesmoke;
     margin: 0 0 0 15px;
     font-size: 24px;
     float: left;
 }
+
 .login-button {
     height: 45px;
     background: rgb(8, 167, 175);
@@ -24,6 +27,7 @@
     font-size: 16px;
     float: right;
 }
+
 .reg-button {
     height: 45px;
     background: rgb(8, 167, 175);
@@ -33,10 +37,12 @@
     float: right;
     margin: 0 15px 0 15px;
 }
+
 /* Sidebar & Profile Menu */
 .sidebar {
     grid-area: sidebar;
 }
+
 .sidebar-panel {
     margin: 15px;
     width: 220px;
@@ -44,6 +50,7 @@
     text-align: center;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
+
 .profile-photo {
     width: 150px;
     height: 150px;
@@ -51,6 +58,7 @@
     border: 5px solid rgb(8, 167, 175);
     margin-top: 25px;
 }
+
 .add-task {
     width: 150px;
     height: 40px;
@@ -60,9 +68,11 @@
     color: whitesmoke;
     font-size: 16px;
 }
+
 .add-task:active {
     color: blue;
 }
+
 .logout {
     margin: 15px 0 15px 0;
     font-size: 16px;
@@ -72,21 +82,24 @@
     background: rgb(8, 167, 175);
     color: whitesmoke;
 }
+
 .logout:active {
     color: blue;
 }
+
 /* Основной контент */
 .content {
     grid-area: content;
     /* border: 1px solid red; */
 }
+
 .new-task-form {
     margin: 15px 15px 0 30px;
     height: 55px;
     padding: 15px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    background: rgb(8, 167, 175);
 }
+
 .task-name {
     width: 50%;
     height: 25px;
@@ -95,6 +108,7 @@
     float: left;
     border: 0;
 }
+
 .save {
     background: url('../images/save-button.png');
     background-size: 25px 25px;
@@ -103,6 +117,7 @@
     border: 0px;
     float: right;
 }
+
 .save:hover {
     background: url('../images/save-button-active.png');
     background-size: 25px 25px;
@@ -111,6 +126,7 @@
     border: 0px;
     float: right;
 }
+
 .edit {
     background: url('../images/edit-button.png');
     background-size: 25px 25px;
@@ -120,6 +136,7 @@
     float: right;
     margin-left: 15px;
 }
+
 .edit:hover {
     background: url('../images/edit-button-active.png');
     background-size: 25px 25px;
@@ -128,15 +145,17 @@
     border: 0px;
     float: right;
 }
+
 .delete {
     background: url('../images/delete-button.png');
-    background-size: 25px 25px; 
+    background-size: 25px 25px;
     width: 25px;
     height: 25px;
     border: 0px;
     float: right;
     margin-left: 15px;
 }
+
 .delete:hover {
     background: url('../images/delete-button-active.png');
     background-size: 25px 25px;
@@ -147,32 +166,41 @@
 }
 
 .auth-panel {
-    width: 300px;
-    height: 350px;
+    width: 350px;
+    height: 400px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     margin: 75px 0 0 275px;
     text-align: center;
 }
+
 .reg-panel {
-    width: 300px;
-    height: 350px;
+    width: 350px;
+    height: 400px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     margin: 75px 0 0 275px;
     text-align: center;
 }
+
 span {
     line-height: 175px;
     font-size: 22px;
 }
+
+.auth-answer {
+    text-align: center;
+    color: red;
+}
+
 .auth-inputs {
-    width: 200px;
+    width: 250px;
     height: 35px;
     margin-top: 15px;
     text-align: center;
     font-size: 18px;
 }
+
 .auth-submit {
-    width: 150px;
+    width: 200px;
     height: 35px;
     margin: 15px;
     border: 0;
@@ -180,26 +208,15 @@ span {
     color: whitesmoke;
     font-size: 18px;
 }
+
 .reg-submit {
-    width: 175px;
+    width: 200px;
     height: 35px;
     margin: 15px;
     border: 0;
     background: rgb(8, 167, 175);
     color: whitesmoke;
-    font-size: 16px;
-}
-
-.answer-panel {
-    width: 300px;
-    height: 75px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    margin: 200px 0 0 275px;
-}
-#answer {
-    text-align: center;
-    line-height: 75px;
-    word-wrap: break-word;
+    font-size: 18px;
 }
 
 .wrapper {
@@ -207,9 +224,7 @@ span {
     display: grid;
     grid-template-columns: 250px 1fr;
     grid-template-rows: 50px auto;
-    grid-template-areas: 
+    grid-template-areas:
         "header header"
         "sidebar content";
-    /* align-items: center; */
-    
 }
