@@ -96,24 +96,23 @@ const MyApp = function() {
 		}
 	}
 	
-	this.countTask; 
-	
 	
 	// Метод сохранения задачи
 	this.saveTask = function() {
+		// Находим родительский элемент, затем его дочерний и меняем CSS-свойства
 		let taskDiv = this.parentNode
 		let taskName = taskDiv.getElementsByClassName('task-name')[0]
 		taskName.disabled = 'false' 
 		taskName.style.backgroundColor = 'white'
 		taskName.style.fontWeight = 'bold'
 		
+		// Создаем объект со свойствами для передачи на сервер.
 		let taskObj = {
 			'username' : document.querySelector('.profile-name').innerHTML,
-			'numbertask' : ToDoApp.countTask++,
 			'nametask' : taskName.value
 		}
 		
-		
+		// Отправляем запрос на сервер 
 		let taskParams = JSON.stringify(taskObj)
 		let xhr = new XMLHttpRequest() 
 		xhr.onreadystatechange = function() {
@@ -130,6 +129,7 @@ const MyApp = function() {
 	
 	// Метод редактирования задачи
 	this.editTask = function() {
+		// Находим родительский элемент, затем его дочерний и меняем CSS-свойства
 		let taskDiv = this.parentNode
 		let taskName = taskDiv.getElementsByClassName('task-name')[0]
 		if (taskName.disabled) {
@@ -141,14 +141,17 @@ const MyApp = function() {
 	
 	// Метод удаления задачи 	
 	this.removeTask = function() {
+		// Находим родительский элемент, затем его дочерний и меняем CSS-свойства
 		let taskDiv = this.parentNode
 		let taskName = taskDiv.getElementsByClassName('task-name')[0]
 		
+		// Создаем объект со свойствами для передачи на сервер.
 		let taskObj = {
 			'username' : document.querySelector('.profile-name').innerHTML,
 			'nametask' : taskName.value
 		}
 		
+		// Отправляем запрос на сервер 
 		let taskParams = JSON.stringify(taskObj)
 		let xhr = new XMLHttpRequest() 
 		xhr.onreadystatechange = function() {
@@ -167,12 +170,15 @@ const MyApp = function() {
 	
 	// Метод выход из приложения
 	this.exitApp = function() {
+		// Оторажаем кнопки "Войти" и "Зарегистироваться"
 		loginButton.style.visibility = 'visible'
 		regButton.style.visibility = 'visible'
 		
+		// Скрываем сайдбар 
 		let sidebar = document.querySelector('.sidebar')
 		sidebar.style.visibility = 'hidden' 
-				
+		
+		// Удаляем отображение задач
 		let myTasks = document.querySelectorAll('.new-task-form')
 		for (let i = 0; i < myTasks.length; i++) {
 			myTasks[i].remove()
@@ -183,19 +189,19 @@ const MyApp = function() {
 		document.getElementById('pass-input').value = ""
 		document.getElementById('reg-user-input').value = ""
 		document.getElementById('reg-pass-input').value = ""
-		// document.querySelector('.auth_answer').value = ""
-		// document.querySelector('.reg-answer').value = ""
 	}	
 }
 
 // Авторизация пользователя в приложении
 authorizeUser = (user, pass) => {
 	
+	// Создаем объект со свойствами для передачи на сервер
 	let userPassObj = {
 		'login' : user,
 		'pass' : pass
 	}
 	
+	// Отправляем запрос на сервер
 	let userPassParam = JSON.stringify(userPassObj)
 	let xhr = new XMLHttpRequest()
 	xhr.onreadystatechange = function() {
@@ -208,10 +214,9 @@ authorizeUser = (user, pass) => {
 				// Иначе, авторизация прошла успешно
 				let authPanel = document.querySelector('.auth-panel')
 				let sidebar = document.querySelector('.sidebar')
-				// document.querySelector('.auth_answer').value = ""
-				openApp(authPanel, sidebar)
-				getProfileUsername(userPassObj.login)
-				loadMyTask()
+				openApp(authPanel, sidebar) // Обращаемся к функции открытия приложения
+				getProfileUsername(userPassObj.login) // Задаем текущее имя пользователя 
+				loadMyTask() // Обращаемся к функции загрузки сохраненных задач на сервере
 			}
 		}
 	}
@@ -223,11 +228,13 @@ authorizeUser = (user, pass) => {
 // Регистрация нового пользователя 
 registrationUser = (user, pass) => {
 	
+	// Создаем объект со свойствами для передачи на сервер
 	let userPassObj = {
 		'login' : user,
 		'pass' : pass
 	}
 	
+	// Отправляем запрос на сервер
 	let userPassParams = JSON.stringify(userPassObj)
 	let xhr = new XMLHttpRequest() 
 	xhr.onreadystatechange = function() {
@@ -238,8 +245,8 @@ registrationUser = (user, pass) => {
 			} else if (answer) {
 				let regPanel = document.querySelector('.reg-panel')
 				let sidebar = document.querySelector('.sidebar')
-				openApp(regPanel, sidebar)
-				getProfileUsername(userPassObj.login)
+				openApp(regPanel, sidebar) // Обращаемся к методу открытия приложения 
+				getProfileUsername(userPassObj.login) // Задаем текущее имя пользователя 
 			}
 		}
 	}
@@ -248,32 +255,17 @@ registrationUser = (user, pass) => {
 	xhr.send('x=' + userPassParams)
 }
 
-// Открытие приложения
+// Функция открытия приложения 
 openApp = (signForm, sidebarPanel) => {
-		signForm.style.display = 'none'
-		sidebarPanel.style.visibility = 'visible'
+		signForm.style.display = 'none' // Скрываем отображение форм "Авторизации"\"Регистрации"
+		sidebarPanel.style.visibility = 'visible' // Отображаем сайдар 
+		// Скрываем кнопки "Войти" и "Зарегистрироваться"
 		loginButton.style.visibility = 'hidden'
 		regButton.style.visibility = 'hidden'
 		
 		// Кнопка и событие для выхода из приложения 
 		let exitButton = document.querySelector('.logout')
 		exitButton.addEventListener('click', ToDoApp.exitApp)
-		// Объект для хранения имени текущего пользователя 
-		// let taskObj = {
-			// 'username' : document.querySelector('#user-input').value,
-		// }
-		
-		// let taskParams = JSON.stringify(taskObj)
-		// let xhr = new XMLHttpRequest() 
-		// xhr.onreadystatechange = function() {
-			// if (this.readyState == 4 && this.status == 200) {
-				// let answer = JSON.parse(this.responseText)
-				// loadMyTask(answer) 
-			// }
-		// }
-		// xhr.open('POST', '/myProjects/ToDo_ver0.2/php/load_task.php', true)
-		// xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded')
-		// xhr.send('x=' + taskParams)
 }
 
 // Присваиваем profile-name имя текущего пользователя
@@ -284,18 +276,21 @@ getProfileUsername = (currentUsername) => {
 // Загружаем сохраненные задачи пользователя 
 loadMyTask = () => {	
 	
+		// Создаем объект со свойствами для передачи на сервер	
 		let taskObj = {
 			'username' : document.querySelector('#user-input').value,
 		}
 		
+		// Отправляем на сервер запрос 
 		let taskParams = JSON.stringify(taskObj)
 		let xhr = new XMLHttpRequest() 
 		xhr.onreadystatechange = function() {
 			if (this.readyState == 4 && this.status == 200) {
 				let answer = JSON.parse(this.responseText)
-					// создаем элемент для 
+					// Если на сервере есть сохраненные задачи, находим элемент "content"
 					content = document.querySelector('.content')
 					for (let i = 0; i < answer.length; i++) {
+						// Для каждой задача создаем элементы с классами и добавляем на страницу
 						let taskForm = document.createElement('div')
 						taskForm.setAttribute('class', 'new-task-form')
 						
@@ -326,37 +321,6 @@ loadMyTask = () => {
 		xhr.open('POST', '/myProjects/todolist/php/load_tasks.php', true)
 		xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded')
 		xhr.send('x=' + taskParams)
-	
-	
-	
-	// создаем элемент для 
-	content = document.querySelector('.content')
-	for (let i = 0; i < taskObj.length; i++) {
-		let taskForm = document.createElement('div')
-		taskForm.setAttribute('class', 'new-task-form')
-		
-		let taskInput = document.createElement('input')
-		taskInput.setAttribute('class', 'task-name')
-		taskInput.value = taskObj[i].taskname
-
-		let save = document.createElement('button')
-		save.setAttribute('class', 'save')
-		save.addEventListener('click', ToDoApp.saveTask)
-		
-		let edit = document.createElement('button')
-		edit.setAttribute('class', 'edit')
-		edit.addEventListener('click', ToDoApp.editTask)
-		
-		let remove = document.createElement('button')
-		remove.setAttribute('class', 'delete')
-		remove.addEventListener('click', ToDoApp.removeTask)
-		
-		content.appendChild(taskForm)
-		taskForm.appendChild(taskInput)
-		taskForm.appendChild(remove)
-		taskForm.appendChild(edit)
-		taskForm.appendChild(save)
-	}	
 }
 
 
