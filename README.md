@@ -24,8 +24,8 @@
 
 >CREATE TABLE tasks (
   login VARCHAR(16) NOT NULL,
-  countOfTask INT NOT NULL,
-  taskName VARCHAR(64) NOT NULL,
+  countoftask INT NOT NULL,
+  taskname VARCHAR(64) NOT NULL,
   CONSTRAINT `tasks_desc`
   FOREIGN KEY (login) REFERENCES users (username)
   ON DELETE CASCADE
