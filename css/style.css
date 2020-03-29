@@ -1,211 +1,223 @@
-* {
-    margin: 0px;
-    padding: 0px;
-    box-sizing: border-box;
+body {
+  margin: 0;
+  padding: 0;
 }
-/* Header */
+.wrapper {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 1;
+  /* background: rgb(4, 4, 31);   */
+}
+/* Header and him components */
 .header {
-    grid-area: header;
-    background: rgb(8, 167, 175);
-    line-height: 50px;
-    width: 100%;
+  position: absolute; 
+  z-index: 2;
+  width: inherit;
+  height: 50px;
+  background: rgb(8, 167, 175);    
 }
 .app-name {
-    color: whitesmoke;
-    margin: 0 0 0 15px;
-    font-size: 24px;
-    float: left;
+  margin-left: 25px;  
+  float: left;
+  line-height: 50px;  
+  color: whitesmoke;
+  font-size: 24px;
 }
 .login-button {
-    height: 45px;
-    background: rgb(8, 167, 175);
-    border: 0px;
-    color: whitesmoke;
-    font-size: 16px;
-    float: right;
+  float: right;
+  border: 0;
+  background: rgb(8, 167, 175);
+  color: whitesmoke;
+  line-height: 50px;
+  font-size: 16px;
+}
+.login-button:active {
+  color: rgb(4, 4, 31);  
 }
 .reg-button {
-    height: 45px;
-    background: rgb(8, 167, 175);
-    border: 0px;
-    color: whitesmoke;
-    font-size: 16px;
-    float: right;
-    margin: 0 15px 0 15px;
+  float: right;
+  border: 0;
+  background: rgb(8, 167, 175);
+  color: whitesmoke;
+  line-height: 50px;
+  font-size: 16px;
 }
-/* Sidebar & Profile Menu */
-.sidebar {
-    grid-area: sidebar;
+.reg-button:active {
+  color: rgb(4, 4, 31); 
 }
+/* Sidebar and him components */
 .sidebar-panel {
-    margin: 15px;
-    width: 220px;
-    height: auto;
-    text-align: center;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  position: absolute;
+  z-index: 2;
+  margin: 75px 0 0 25px; 
+  width: 220px; 
+  height: auto;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 .profile-name {
-		margin: 15px;
-		width: 150px;
-		text-align: center; 
-		line-height: 50px;
-		font-size: 16px;
+  margin: 0 auto;
+  width: 200px;
+  color: darkblue;
+  font-size: 18px;
+  line-height: 50px;
 }
 .profile-photo {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    border: 5px solid rgb(8, 167, 175);
-    margin-top: 25px;
+  width: 150px; 
+  height: 150px;
+  margin-top: 15px;
+  border: 2px solid rgb(4, 4, 31);
+  border-radius: 50%;
 }
 .add-task {
-    width: 150px;
-    height: 40px;
-    border: 0;
-    background: rgb(8, 167, 175);
-    margin-top: 15px;
-    color: whitesmoke;
-    font-size: 16px;
+  margin-top: 25px;
+  width: 150px;
+  height: 40px;
+  border: 0; 
+  background: rgb(8, 167, 175);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  color: whitesmoke;
+  font-size: 16px;  
 }
 .add-task:active {
-    color: blue;
+  color: rgb(4, 4, 31); 
 }
 .logout {
-    margin: 15px 0 15px 0;
-    font-size: 16px;
-    width: 150px;
-    height: 40px;
-    border: 0;
-    background: rgb(8, 167, 175);
-    color: whitesmoke;
+  margin: 25px 0 25px 0; 
+  width: 150px;
+  height: 40px;
+  border: 0;
+  background: rgb(8, 167, 175);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  color: whitesmoke;
+  font-size: 16px; 
 }
-.logout:active {
-    color: blue;
+.logout:active{
+  color: rgb(4, 4, 31); 
 }
-/* Основной контент */
-.content {
-    grid-area: content;
-    /* border: 1px solid red; */
+/* Auth and Reg panels and them components */
+.sign-panel {
+  position: absolute;  
+  width: 100%;
+  text-align: center;
 }
-.new-task-form {
-    margin: 15px 15px 0 30px;
-    height: 55px;
-    padding: 15px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-}
-.task-name {
-    width: 50%;
-    height: 25px;
-    box-sizing: border-box;
-    font: 14px Arial;
-    float: left;
-    border: 0;
-}
-.save {
-    background: url('../images/save-button.png');
-    background-size: 25px 25px;
-    width: 25px;
-    height: 25px;
-    border: 0px;
-    float: right;
-}
-.save:hover {
-    background: url('../images/save-button-active.png');
-    background-size: 25px 25px;
-    width: 25px;
-    height: 25px;
-    border: 0px;
-    float: right;
-}
-.edit {
-    background: url('../images/edit-button.png');
-    background-size: 25px 25px;
-    width: 25px;
-    height: 25px;
-    border: 0px;
-    float: right;
-    margin-left: 15px;
-}
-.edit:hover {
-    background: url('../images/edit-button-active.png');
-    background-size: 25px 25px;
-    width: 25px;
-    height: 25px;
-    border: 0px;
-    float: right;
-}
-.delete {
-    background: url('../images/delete-button.png');
-    background-size: 25px 25px; 
-    width: 25px;
-    height: 25px;
-    border: 0px;
-    float: right;
-    margin-left: 15px;
-}
-.delete:hover {
-    background: url('../images/delete-button-active.png');
-    background-size: 25px 25px;
-    width: 25px;
-    height: 25px;
-    border: 0px;
-    float: right;
-}
-
 .auth-panel {
-    width: 350px;
-    height: 400px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    margin: 75px 0 0 275px;
-    text-align: center;
+  margin: 75px auto;
+  width: 350px;
+  height: 400px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  text-align: center;
 }
 .reg-panel {
-    width: 350px;
-    height: 400px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    margin: 75px 0 0 275px;
-    text-align: center;
+  margin: 75px auto;
+  width: 350px;
+  height: 400px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  text-align: center;  
 }
 span {
-    line-height: 175px;
-    font-size: 22px;
+  line-height: 150px;
+  font-size: 22px;  
 }
 .auth-answer {
-		text-align: center;
-		color: red;
+  text-align: center;
+  color: red;  
 }
 .auth-inputs {
-    width: 250px;
-    height: 35px;
-    margin-top: 15px;
-    text-align: center;
-    font-size: 18px;
+  width: 225px;
+  height: 35px;
+  margin-top: 15px;
+  text-align: center;
+  font-size: 18px;  
 }
 .auth-submit {
-    width: 200px;
-    height: 35px;
-    margin: 15px;
-    border: 0;
-    background: rgb(8, 167, 175);
-    color: whitesmoke;
-    font-size: 18px;
+  width: 200px;
+  height: 35px;
+  margin-top: 15px; 
+  border: 0;
+  background: rgb(8, 167, 175);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  color: whitesmoke;
+  font-size: 18px;
+}
+.auth-submit:active {
+  color: rgb(4, 4, 31);  
 }
 .reg-submit {
-    width: 200px;
-    height: 35px;
-    margin: 15px;
-    border: 0;
-    background: rgb(8, 167, 175);
-    color: whitesmoke;
-    font-size: 18px;
+  width: 200px;
+  height: 35px;
+  margin-top: 15px;
+  border: 0;
+  background: rgb(8, 167, 175);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  color: whitesmoke;
+  font-size: 18px; 
 }
-
-.wrapper {
-    height: 100vh;
-    display: grid;
-    grid-template-columns: 250px 1fr;
-    grid-template-rows: 50px auto;
-    grid-template-areas: 
-        "header header"
-        "sidebar content";
+.reg-submit:active {
+  color: rgb(4, 4, 31); 
+}
+/* Task and them components */
+.content {
+  width: 100%;
+  height: 100%;
+  margin-top: 75px;
+}
+.new-task-form {
+  margin: 15px 15px 0 275px;
+  padding: 15px;
+  height: 55px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  box-sizing: border-box;
+}
+.task-name {
+  width: 50%; 
+  height: 25px;
+  font: 14px Arial;
+  float: left;
+  border: 0px;
+}
+.save {
+  float: right;
+  background: url('../images/save-button.png');
+  background-size: 25px 25px; 
+  width: 25px;
+  height: 25px;
+  border: 0;    
+}
+.save:hover {
+  background: url('../images/save-button-active.png');
+  background-size: 25px 25px;
+  width: 25px;
+  height: 25px;
+}
+.edit {
+  float: right;
+  margin-left: 15px; 
+  background: url('../images/edit-button.png');
+  background-size: 25px 25px;
+  width: 25px;
+  height: 25px;
+  border: 0;
+}
+.edit:hover {
+  background: url('../images/edit-button-active.png');
+  background-size: 25px 25px;
+  width: 25px;
+  height: 25px;  
+}
+.delete {
+  float: right;
+  margin-left: 15px;  
+  background: url('../images/delete-button.png');
+  background-size: 25px 25px;
+  width: 25px;
+  height: 25px;
+  border: 0;  
+}
+.delete:hover {
+  background: url('../images/delete-button-active.png');
+  background-size: 25px 25px;
+  width: 25px; 
+  height: 25px;   
 }
